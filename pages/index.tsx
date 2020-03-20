@@ -1,6 +1,6 @@
-import Head from 'next/head'
+import Head from "next/head";
 
-const Home = () => (
+const Home = (): JSX.Element => (
   <div className="container">
     <Head>
       <title>Create Next App</title>
@@ -198,6 +198,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
+);
 
-export default Home
+export default Home;
