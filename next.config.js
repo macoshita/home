@@ -1,4 +1,7 @@
 const path = require("path");
+const markdownIt = require('markdown-it');
+const markdownItPrism = require('markdown-it-prism');
+const markdownItEmoji = require('markdown-it-emoji');
 
 module.exports = {
   webpack: config => {
@@ -8,7 +11,11 @@ module.exports = {
     };
     config.module.rules.push({
       test: /\.md$/,
-      loader: "frontmatter-markdown-loader"
+      loader: "frontmatter-markdown-loader",
+      options: {
+        breaks: true,
+        markdownIt: markdownIt({ html: true }).use(markdownItPrism).use(markdownItEmoji)
+      }
     });
     return config;
   }
