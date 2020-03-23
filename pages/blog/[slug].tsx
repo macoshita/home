@@ -8,7 +8,6 @@ type Props = {
 };
 
 const Post = ({ title, html }: Props): JSX.Element => {
-  console.log(html);
   return (
     <>
       <Head>
@@ -24,15 +23,7 @@ const Post = ({ title, html }: Props): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
-  if (typeof params?.slug !== "string") {
-    return {
-      props: {
-        title: "404",
-        html: ""
-      }
-    };
-  }
-  const { attributes, html } = await import(`~/blog/${params.slug}.md`);
+  const { attributes, html } = await import(`~/blog/${params?.slug}.md`);
 
   return {
     props: {
