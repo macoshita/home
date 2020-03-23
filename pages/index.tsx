@@ -77,7 +77,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const path = await import("path");
   const blogs = fs
     .readdirSync("./blog")
-    .map(file => `/blog/${path.parse(file).name}`);
+    .map(file => `/blog/${path.parse(file).name}`)
+    .sort()
+    .reverse();
 
   return {
     props: {
