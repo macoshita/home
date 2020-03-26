@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
-import Header from "~/components/Header";
+import Nav from "~/components/Nav";
 
 type Props = {
   title: string;
@@ -13,7 +13,7 @@ const Post = ({ title, html }: Props): JSX.Element => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Header />
+      <Nav />
       <article>
         <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />

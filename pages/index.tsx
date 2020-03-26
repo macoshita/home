@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
-import Header from "~/components/Header";
+import Nav from "~/components/Nav";
 import { GetStaticProps } from "next";
 
 type Props = {
@@ -19,7 +19,7 @@ const Home = ({ personalProjects, blogs }: Props): JSX.Element => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <Header />
+    <Nav />
 
     <article>
       <header>
